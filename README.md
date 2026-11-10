@@ -12,8 +12,8 @@ Projeto Integrador Extensionista · ADS.
 ## Como rodar
 
 1. Clone o repositório e entre na pasta:
-   git clone https://github.com/SEU-USUARIO/NOME_DA_ONG.git
-   cd NOME_DA_ONG
+   git clone https://github.com/RafaelLanaDS/ONG.git
+   cd ONG
 2. Instale as dependências: vp install
 3. Copie .env.example para .env
 4. Terminal 1, inicie a API: vp run api
