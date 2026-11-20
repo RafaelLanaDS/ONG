@@ -9,6 +9,7 @@ app.innerHTML = `
 async function verificarApi() {
   const status = document.querySelector("#status");
   try {
+    // Consulta a API para exibir se ela está disponível.
     const resposta = await fetch("/api/health");
     const dados = await resposta.json();
     status.textContent = `${dados.status} (${dados.hora})`;
