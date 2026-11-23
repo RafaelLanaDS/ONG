@@ -16,9 +16,18 @@ Projeto Integrador Extensionista · ADS.
    cd ONG
 2. Instale as dependências: vp install
 3. Copie .env.example para .env
-4. Terminal 1, inicie a API: vp run api
-5. Terminal 2, inicie o frontend: vp dev
-6. Abra http://localhost:5173
+4. Configure `JWT_SECRET` e as credenciais do MySQL no arquivo `.env`
+5. Execute `database/schema.sql` uma vez no MySQL para criar o banco e o usuário demo
+6. Terminal 1, inicie a API: vp run api
+7. Terminal 2, inicie o frontend: vp dev
+8. Abra http://localhost:5173
+
+## Usuário de demonstração
+
+- E-mail: `admin@ong.com`
+- Senha: `admin123`
+
+Todas as telas, exceto o login e a verificação de saúde da API, exigem autenticação JWT.
 
 ## Banco de dados (MySQL)
 
@@ -29,3 +38,13 @@ Para validar a atividade, abra o cliente MySQL na raiz do projeto e execute o ar
 1. `mysql -u root -p`
 2. No prompt do MySQL, execute `source database/schema.sql;`
 3. Execute `source database/schema.sql;` novamente. Ambas as execuções devem terminar sem erro.
+
+## Backup do banco
+
+Em ambiente local:
+
+```bash
+mysqldump -u root -p ong_doacoes > backup_ong_doacoes.sql
+```
+
+Não inclua o backup no repositório quando ele contiver dados pessoais reais.

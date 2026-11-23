@@ -40,3 +40,18 @@ CREATE TABLE doacao (
 ) ENGINE=InnoDB
   DEFAULT CHARACTER SET utf8mb4
   COLLATE utf8mb4_unicode_ci;
+
+CREATE TABLE usuario (
+  id_usuario BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,
+  nome VARCHAR(150) NOT NULL,
+  email VARCHAR(254) NOT NULL,
+  senha_hash CHAR(60) NOT NULL,
+  criado_em DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (id_usuario),
+  UNIQUE INDEX idx_usuario_email (email)
+) ENGINE=InnoDB
+  DEFAULT CHARACTER SET utf8mb4
+  COLLATE utf8mb4_unicode_ci;
+
+INSERT INTO usuario (nome, email, senha_hash)
+VALUES ('Administrador', 'admin@ong.com', '$2b$10$Nw7Vt71O2dOqg4Nk7GJwnu2XWfS4BJNYhckcgGSSgbgtQJApwqKt.');
